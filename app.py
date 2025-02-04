@@ -1,11 +1,11 @@
 import base64
 import io
-import streamlit as st
 import os
-from dotenv import load_dotenv
+
 import google.generativeai as genai
-from PIL import Image
 import pdf2image
+import streamlit as st
+from dotenv import load_dotenv
 
 load_dotenv()
 
@@ -42,4 +42,9 @@ def input_pdf_setup(uploaded_file):
 
 # ------------------UI------------------------
 
-st.text_input("Enter the job description...")
+st.set_page_config(page_title="ATS Resume Expert")
+st.header("ATS Tracking System")
+input_text = st.text_area("Enter the job description...", key="input")
+uploaded_file = st.file_uploader("Upload your resume in PDF format", type=["pdf"])
+if uploaded_file is not None:
+    st.write("PDF uploaded successfully")
