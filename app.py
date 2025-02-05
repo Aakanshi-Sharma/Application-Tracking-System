@@ -44,7 +44,7 @@ def input_pdf_setup(uploaded_file):
 
 st.set_page_config(page_title="ATS Resume Expert")
 st.header("ATS Tracking System")
-input_text = st.text_area("Enter the job description...", key="input")
+input_text = st.text_area("Enter the job description", key="input")
 uploaded_file = st.file_uploader("Upload your resume in PDF format", type=["pdf"])
 if uploaded_file is not None:
     st.write("PDF uploaded successfully")
