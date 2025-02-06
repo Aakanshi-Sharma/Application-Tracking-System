@@ -48,3 +48,14 @@ input_text = st.text_area("Enter the job description", key="input")
 uploaded_file = st.file_uploader("Upload your resume in PDF format", type=["pdf"])
 if uploaded_file is not None:
     st.write("PDF uploaded successfully")
+
+submit1 = st.button("Tell me about the resume")
+submit2 = st.button("How can I Improvise my skills")
+submit3 = st.button("Percentage match")
+
+input_prompt="""
+You are an experienced HR with Tech Experience in the field of data science,
+big Data engineering, your task is to review the provided resume against the job description.
+Please share your professional evaluation on whether the candidate's profile align with this
+"""
+
