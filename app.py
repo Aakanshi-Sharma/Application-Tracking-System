@@ -53,9 +53,24 @@ submit1 = st.button("Tell me about the resume")
 submit2 = st.button("How can I Improvise my skills")
 submit3 = st.button("Percentage match")
 
-input_prompt="""
-You are an experienced HR with Tech Experience in the field of data science,
-big Data engineering, your task is to review the provided resume against the job description.
-Please share your professional evaluation on whether the candidate's profile align with this
+input_prompt1 = """
+You are an experienced HR with Tech Experience in the field of data science, full stack development,
+big Data engineering, DEVOPS, Data analyst, your task is to review the provided resume against the job description.
+Please share your professional evaluation on whether the candidate's profile align with the role.
+Highlight the strengths and weaknesses of the applicant in relation to that specified job requirements. 
 """
 
+# input_prompt2 = """
+# You are an Technical HR with expertise in data science, full stack development,
+# big Data engineering, DEVOPS, Data analyst,
+#  your role is to scrutinize the resume in light of the job description provided.
+#  Share your insights on the candidate's suitability for the role from an HR perspective,
+#  Additionally, offer advice on enhancing the candidate's skills and identify areas of interest
+# """
+
+input_prompt3 = """
+You are an skilled ATS (Applicant Tracking System) scanner with a deep understanding of data science, full stack development,
+big Data engineering, DEVOPS, Data analyst, and deep ATS functionality,
+Your task is to evaluate the resume against the provided job description, give me the percentage of match if the resume matches 
+job description. First the output should come as percentage and then keywords missing and last final thoughts. 
+"""
