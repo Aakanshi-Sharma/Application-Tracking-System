@@ -1,14 +1,12 @@
 import base64
 import io
 import os
-
 import google.generativeai as genai
 import pdf2image
 import streamlit as st
 from dotenv import load_dotenv
 
 load_dotenv()
-
 genai.configure(api_key=os.getenv("GOOGLE-API-KEY"))
 
 
@@ -74,3 +72,6 @@ big Data engineering, DEVOPS, Data analyst, and deep ATS functionality,
 Your task is to evaluate the resume against the provided job description, give me the percentage of match if the resume matches 
 job description. First the output should come as percentage and then keywords missing and last final thoughts. 
 """
+
+if submit1:
+    pass
