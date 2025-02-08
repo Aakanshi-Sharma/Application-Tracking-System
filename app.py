@@ -20,7 +20,8 @@ def get_gemini_response(input_text, pdf_content, prompt):
 
 def input_pdf_setup(uploaded_file):
     if uploaded_file is not None:
-        images = pdf2image.convert_from_bytes(uploaded_file.read(), poppler_path=r'C:\Program Files\poppler\Library\bin')
+        images = pdf2image.convert_from_bytes(uploaded_file.read(),
+                                              poppler_path=r'C:\Program Files\poppler\Library\bin')
         first_page = images[0]
 
         img_byte_arr = io.BytesIO()
@@ -74,19 +75,21 @@ job description. First the output should come as percentage and then keywords mi
 """
 
 if submit1:
-    if uploaded_file is not None and input_text !="":
+    if uploaded_file is not None and input_text != "":
         pdf_content = input_pdf_setup(uploaded_file)
         response = get_gemini_response(input_text, pdf_content, input_prompt1)
-        st.write("The response : ", response)
+        st.subheader("Response : ")
+        st.write(response)
 
     else:
         st.write("Uploaded file and job description can't be empty!")
 
 elif submit3:
-    if uploaded_file is not None and input_text !="":
+    if uploaded_file is not None and input_text != "":
         pdf_content = input_pdf_setup(uploaded_file)
         response = get_gemini_response(input_text, pdf_content, input_prompt3)
-        st.write("The response : ", response)
+        st.subheader("Response : ")
+        st.write(response)
 
     else:
         st.write("Uploaded file and job description can't be empty!")
