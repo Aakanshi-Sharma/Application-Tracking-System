@@ -19,7 +19,7 @@ def get_genai_response(input_text):
 def input_pdf_text(uploaded_file):
     reader = pdf.PdfReader(uploaded_file)
     text = ""
-    for page in reader(len(reader.pages)):
+    for page in range(len(reader.pages)):
         page = reader.pages[page]
         text += str(page.extract_text())
         text += " "
@@ -47,3 +47,10 @@ st.text("Improve your Resume ATS")
 jd = st.text_area("Paste the job Description")
 uploaded_files = st.file_uploader("Upload your resume", type="pdf", help="Please upload resume in pdf format")
 submit_button = st.button("Submit")
+if submit_button:
+    if uploaded_files is not None:
+        text = input_pdf_text(uploaded_files)
+        with st.spinner("Loading..."):
+            response = get_genai_response(input_prompt)
+            st.subheader("The Response is :")
+            st.text(response)
