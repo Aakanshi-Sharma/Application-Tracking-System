@@ -42,7 +42,7 @@ I want the response in one single string having the structure
 # ----------------------UI---------------------
 
 
-st.title("ATS")
+st.title("Application Tracking System")
 st.text("Improve your Resume ATS")
 jd = st.text_area("Paste the job Description")
 uploaded_files = st.file_uploader("Upload your resume", type="pdf", help="Please upload resume in pdf format")
